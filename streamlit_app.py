@@ -48,6 +48,8 @@ if ingredients_list:
         session.sql(my_insert_stmt).collect()
         st.success('Your Smoothie is ordered!', icon="✅")
 
+return snowflake.snowpark.session._get_active_session()
+
 cnx=st.connection("snowflake")
 session=cnx.session()
-return snowflake.snowpark.session._get_active_session()
+
