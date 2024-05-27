@@ -41,7 +41,6 @@ if ingredients_list:
     my_insert_stmt = """ insert into smoothies.public.orders(ingredients.select(col(name_on_order))
             values ('""" + ingredients_string + """','""" + name_on_order + """')"""
 
-    return snowflake.snowpark.session._get_active_session()
 
     st.write(my_insert_stmt)
     
